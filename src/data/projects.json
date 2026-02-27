@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "slug": "three-peaks",
+    "title": "Three Peaks Chalet",
+    "clientType": "Private Residence",
+    "location": "Crans-Montana",
+    "coverImage": "/images/portfolio/three-peaks/cover.jpg",
+    "images": [
+      "/images/portfolio/three-peaks/gallery-1.jpg",
+      "/images/portfolio/three-peaks/gallery-2.jpg"
+    ],
+    "description": "Three Peaks Chalet is a comprehensive interior design and project management commission in Crans-Montana, Switzerland. PEARLMAN Designs is transforming this alpine property with bespoke joinery, curated furnishings, and a design scheme that celebrates the surrounding mountain landscape. Every detail — from custom millwork to the art programme — was selected to frame the panoramic views of the Valais Alps.",
+    "services": ["Interior Design", "Project Management", "FF&E"],
+    "featured": true
+  },
+  {
+    "id": "2",
+    "slug": "les-pontets",
+    "title": "Les Pontets",
+    "clientType": "Private Residence",
+    "location": "Crans-Montana",
+    "coverImage": "/images/portfolio/les-pontets/cover.jpg",
+    "images": [
+      "/images/portfolio/les-pontets/gallery-1.jpg",
+      "/images/portfolio/les-pontets/gallery-2.jpg"
+    ],
+    "description": "Les Pontets is a refined apartment renovation in Crans-Montana where understated luxury meets alpine charm. PEARLMAN Designs delivered a complete interior architecture and design scheme, introducing clean lines, natural materials, and a muted palette to create a sanctuary above the valley. The result is a home that feels both contemporary and rooted in its mountain setting.",
+    "services": ["Interior Design", "Interior Architecture"],
+    "featured": true
+  },
+  {
+    "id": "3",
+    "slug": "nbam",
+    "title": "NBAM Residence",
+    "clientType": "Private Residence",
+    "location": "Haute-Nendaz",
+    "coverImage": "/images/portfolio/nbam/cover.jpg",
+    "images": [
+      "/images/portfolio/nbam/gallery-1.jpg",
+      "/images/portfolio/nbam/gallery-2.jpg"
+    ],
+    "description": "The NBAM Residence is a complete turnkey interior design project in Haute-Nendaz, delivered move-in ready by PEARLMAN Designs. From architectural coordination through to FF&E procurement and final styling, every element was considered to create a warm, contemporary mountain retreat. The project showcases our ability to manage every phase of a residential transformation.",
+    "services": ["Interior Design", "Turnkey Solution"],
+    "featured": true
+  },
+  {
+    "id": "4",
+    "slug": "chalet-la-licorne",
+    "title": "Chalet La Licorne",
+    "clientType": "Private Residence",
+    "location": "Swiss Alps",
+    "coverImage": "/images/portfolio/chalet-la-licorne/cover.jpg",
+    "images": [
+      "/images/portfolio/chalet-la-licorne/gallery-1.jpg",
+      "/images/portfolio/chalet-la-licorne/gallery-2.jpg"
+    ],
+    "description": "Chalet La Licorne is an iconic alpine property reimagined by PEARLMAN Designs with a bold yet sensitive approach. Heritage features were preserved and celebrated while introducing contemporary comfort, bespoke furniture, and a curated material palette throughout. The project management encompassed coordination of specialist trades across multiple phases of renovation.",
+    "services": ["Interior Design", "Project Management"],
+    "featured": true
+  }
+]

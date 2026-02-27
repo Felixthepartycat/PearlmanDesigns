@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Lefroy Brooks",
+    "category": "Bathrooms & Sanitaryware",
+    "url": "https://www.lefroybrooks.com",
+    "logo": "/images/partners/lefroy-brooks.png"
+  },
+  {
+    "name": "Waterworks",
+    "category": "Bathrooms & Sanitaryware",
+    "url": "https://www.waterworks.com",
+    "logo": "/images/partners/waterworks.png"
+  },
+  {
+    "name": "Samuel Heath",
+    "category": "Bathrooms & Sanitaryware",
+    "url": "https://www.samuel-heath.com",
+    "logo": "/images/partners/samuel-heath.png"
+  },
+  {
+    "name": "Georg Jensen",
+    "category": "Art & Accessories",
+    "url": "https://www.georgjensen.com",
+    "logo": "/images/partners/georg-jensen.png"
+  }
+]

@@ -1,101 +1,195 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
+import HeroCarousel from "@/components/sections/HeroCarousel";
+import FAQAccordion from "@/components/sections/FAQAccordion";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import { FAQJsonLd } from "@/components/seo/JsonLd";
+import projects from "@/data/projects.json";
+import type { Project } from "@/lib/types";
+
+export const metadata: Metadata = {
+  title: "PEARLMAN Designs | Luxury Interior Design, Swiss Alps",
+  description:
+    "PEARLMAN Designs is a luxury interior design and project management studio in Lens, Switzerland. Bespoke alpine interiors in Crans-Montana, Gstaad, and the Swiss Alps.",
+};
+
+const featuredProjects = (projects as Project[]).filter((p) => p.featured).slice(0, 4);
+
+const faqItems = [
+  {
+    question: "Where is PEARLMAN Designs located?",
+    answer:
+      "PEARLMAN Designs is based in Lens, Valais, Switzerland — minutes from Crans-Montana\u2019s ski slopes and luxury boutiques. Our private showroom and design studio serves clients across the Swiss Alps.",
+  },
+  {
+    question: "What types of projects does PEARLMAN Designs work on?",
+    answer:
+      "We specialize in high-end residential interior design for alpine properties including chalets, apartments, and private residences in Crans-Montana, Gstaad, Verbier, Nendaz, and surrounding villages.",
+  },
+  {
+    question: "Does PEARLMAN Designs offer turnkey interior design?",
+    answer:
+      "Yes. We provide complete turnkey solutions from initial design concept through to FF&E procurement, project management, installation, and final styling — including bespoke furniture, lighting, art, and accessories.",
+  },
+];
+
+const services = [
+  {
+    title: "Interior Design",
+    description:
+      "Bespoke design schemes reflecting the individuality of each client. From concept to completion.",
+  },
+  {
+    title: "Project Management",
+    description:
+      "Meticulous coordination of every trade, timeline, and detail across your alpine property.",
+  },
+  {
+    title: "Turnkey Solutions",
+    description:
+      "Complete procurement, installation, and styling. Move in and exhale.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      {/* FAQ Schema */}
+      <FAQJsonLd items={faqItems} />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* ─── SECTION 1: Hero Carousel ─── */}
+      <HeroCarousel />
+
+      {/* ─── SECTION 2: Introduction ─── */}
+      <section className="bg-lightcream">
+        <div className="mx-auto max-w-[800px] px-6 py-24 text-center md:py-32">
+          <ScrollReveal>
+            <p className="font-serif text-xl leading-relaxed text-charcoal md:text-2xl md:leading-relaxed">
+              Based in Lens, a stone&apos;s throw from Crans-Montana, PEARLMAN
+              Designs creates bespoke interiors for discerning clients across the
+              Swiss Alps. We bring over 30 years of international experience to
+              every project — from architectural plans to the final styling
+              details.
+            </p>
+            <div className="mx-auto mt-10 h-[1px] w-10 bg-warmgold" />
+            <Link
+              href="/about"
+              className="group mt-8 inline-block font-sans text-xs uppercase tracking-[0.2em] text-warmgold transition-colors duration-300 hover:text-charcoal"
+            >
+              Discover Our Approach
+              <span className="ml-1 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                &rarr;
+              </span>
+              <span className="block h-[1px] w-0 bg-charcoal transition-all duration-300 group-hover:w-full" />
+            </Link>
+          </ScrollReveal>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* ─── SECTION 3: Featured Projects ─── */}
+      <section className="mx-auto max-w-[1440px] px-6 py-24 md:py-32 lg:px-12">
+        <ScrollReveal>
+          <h2 className="mb-12 text-center font-serif text-3xl text-charcoal md:mb-16">
+            Selected Projects
+          </h2>
+        </ScrollReveal>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
+          {featuredProjects.map((project, i) => (
+            <ScrollReveal key={project.id} delay={i * 0.1}>
+              <Link
+                href={`/portfolio/${project.slug}`}
+                className="group block"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden bg-softgray">
+                  <Image
+                    src={project.coverImage}
+                    alt={`${project.title} — ${project.clientType} in ${project.location}`}
+                    fill
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="mt-4">
+                  <h3 className="font-serif text-xl text-charcoal">
+                    {project.title}
+                  </h3>
+                  <p className="mt-1 font-sans text-xs uppercase tracking-[0.2em] text-warmgold">
+                    {project.clientType}
+                  </p>
+                </div>
+              </Link>
+            </ScrollReveal>
+          ))}
+        </div>
+        <ScrollReveal>
+          <div className="mt-14 text-center">
+            <Link
+              href="/portfolio"
+              className="group inline-block font-sans text-xs uppercase tracking-[0.2em] text-warmgold transition-colors duration-300 hover:text-charcoal"
+            >
+              View All Projects
+              <span className="ml-1 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                &rarr;
+              </span>
+              <span className="block h-[1px] w-0 bg-charcoal transition-all duration-300 group-hover:w-full" />
+            </Link>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* ─── SECTION 4: Services ─── */}
+      <section className="bg-charcoal">
+        <div className="mx-auto max-w-[1440px] px-6 py-24 md:py-32 lg:px-12">
+          <ScrollReveal>
+            <h2 className="mb-16 text-center font-serif text-3xl text-cream">
+              Our Services
+            </h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10">
+            {services.map((service, i) => (
+              <ScrollReveal key={service.title} delay={i * 0.12}>
+                <div className="border-t border-warmgold pt-6">
+                  <h3 className="font-serif text-xl text-cream">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 font-sans text-sm leading-relaxed text-cream/60">
+                    {service.description}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal>
+            <div className="mt-16 text-center">
+              <Link
+                href="/contact"
+                className="group inline-block font-sans text-xs uppercase tracking-[0.2em] text-warmgold transition-colors duration-300 hover:text-cream"
+              >
+                Discuss Your Project
+                <span className="ml-1 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                  &rarr;
+                </span>
+                <span className="block h-[1px] w-0 bg-cream transition-all duration-300 group-hover:w-full" />
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ─── SECTION 5: FAQ / AEO Content ─── */}
+      <section className="bg-lightcream">
+        <div className="mx-auto max-w-[800px] px-6 py-24 md:py-32">
+          <ScrollReveal>
+            <h2 className="mb-12 text-center font-serif text-3xl text-charcoal">
+              Frequently Asked Questions
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal>
+            <FAQAccordion items={faqItems} />
+          </ScrollReveal>
+        </div>
+      </section>
     </div>
   );
 }
