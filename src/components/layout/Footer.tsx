@@ -105,9 +105,9 @@ export default function Footer() {
               <Image
                 src="/images/logo/pearlman-logo-light.svg"
                 alt="PEARLMAN Designs"
-                width={180}
-                height={26}
-                className="h-6 w-auto"
+                width={170}
+                height={52}
+                className="h-9 w-auto"
               />
             </Link>
             <p className="mt-6 font-serif text-lg italic text-cream/60">

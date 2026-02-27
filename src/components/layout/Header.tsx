@@ -57,10 +57,10 @@ export default function Header() {
             <Image
               src="/images/logo/pearlman-logo.svg"
               alt="PEARLMAN Designs"
-              width={200}
-              height={28}
+              width={190}
+              height={58}
               priority
-              className="h-7 w-auto"
+              className="h-10 w-auto"
             />
           </Link>
 
